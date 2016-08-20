@@ -10,7 +10,7 @@ module.exports = function (grunt) {
         options: {
           sourceMap: true
         },
-        src: ['client/*.coffee', 'test/*.coffee'],
+        src: ['client/*.coffee', 'test/*.coffee', 'server/*.coffee'],
         ext: '.js'
       }
     },
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 
     watch: {
       all: {
-        files: ['client/*.coffee', 'test/*.coffee'],
+        files: ['client/*.coffee', 'test/*.coffee', 'server/*.coffee'],
         tasks: ['coffee','mochaTest']
       }
     }

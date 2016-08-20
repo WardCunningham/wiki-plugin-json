@@ -1,6 +1,6 @@
 {
   "name": "wiki-plugin-json",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Federated Wiki - JSON Plugin",
   "keywords": [
     "json",
@@ -9,9 +9,9 @@
     "plugin"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "you@example.com",
-    "url": "http://example.com"
+    "name": "Ward Cunningham",
+    "email": "ward@c2.com",
+    "url": "http://ward.bay.wiki.org"
   },
   "contributors": [],
   "scripts": {
@@ -28,10 +28,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fedwiki/wiki-plugin-json.git"
+    "url": "https://github.com/wardcunningham/wiki-plugin-json.git"
   },
   "bugs": {
-    "url": "https://github.com/fedwiki/wiki-plugin-json/issues"
+    "url": "https://github.com/wardcunningham/wiki-plugin-json/issues"
   },
   "engines": {
     "node": ">0.10"
