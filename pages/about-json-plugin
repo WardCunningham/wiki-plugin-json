@@ -1,0 +1,37 @@
+{
+  "title": "About JSON Plugin",
+  "story": [
+  {
+    "type": "paragraph",
+    "id": "7fdbf43fc61e3058",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "json",
+    "id": "35ece947aa90b581",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+],
+  "journal": [
+  {
+    "type": "create",
+    "item": {
+      "title": "About JSON Plugin",
+      "story": [
+  {
+    "type": "paragraph",
+    "id": "7fdbf43fc61e3058",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "json",
+    "id": "35ece947aa90b581",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+]
+    },
+    "date": 1471735279000,
+    "certificate": "from mkplugin.sh"
+  }
+]
+}
