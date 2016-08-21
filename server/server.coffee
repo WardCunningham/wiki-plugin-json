@@ -60,7 +60,6 @@ publishing = (sitemap, story, index) ->
 
 startServer = (params) ->
   app = params.app
-  console.log 'startServer json'
 
   app.get '/plugin/json/:slug', (req, res) ->
     slug = req.params.slug
@@ -79,10 +78,9 @@ startServer = (params) ->
          item.type == 'json'
       return res.status(404).json({status: 'error', error: "No wiki-plugin-json on this page.", slug}) unless plugin >= 0
       item = page.story[plugin]
-      console.log req.body
       item.resource = req.body
       app.pagehandler.put slug, page, (err) ->
         return res.e err if err
-        res.json {status: 'ok', length:JSON.stringify(item, null, '  ').length}
+        res.json {status: 'ok', length: JSON.stringify(item.resource).length}
 
 module.exports = {startServer}
