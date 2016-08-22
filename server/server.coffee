@@ -77,6 +77,8 @@ startServer = (params) ->
       plugin = page.story?.findIndex (item) ->
          item.type == 'json'
       return res.status(404).json({status: 'error', error: "No wiki-plugin-json on this page.", slug}) unless plugin >= 0
+      key = "35ece947aa90b581"
+      return res.status(400).json({status: 'error', error: "Invalid x-api-key in header"}) unless req.headers['x-api-key'] == key
       item = page.story[plugin]
       item.resource = req.body
       app.pagehandler.put slug, page, (err) ->
