@@ -1,37 +1,177 @@
 {
   "title": "About JSON Plugin",
   "story": [
-  {
-    "type": "paragraph",
-    "id": "7fdbf43fc61e3058",
-    "text": "Here we describe the purpose of the plugin and include a sample."
-  },
-  {
-    "type": "json",
-    "id": "35ece947aa90b581",
-    "text": "This is text in the new plugin. You can *double-click* to edit it too."
-  }
-],
-  "journal": [
-  {
-    "type": "create",
-    "item": {
-      "title": "About JSON Plugin",
-      "story": [
-  {
-    "type": "paragraph",
-    "id": "7fdbf43fc61e3058",
-    "text": "Here we describe the purpose of the plugin and include a sample."
-  },
-  {
-    "type": "json",
-    "id": "35ece947aa90b581",
-    "text": "This is text in the new plugin. You can *double-click* to edit it too."
-  }
-]
+    {
+      "type": "paragraph",
+      "id": "7fdbf43fc61e3058",
+      "text": "The plugin exposes restful endpoints for reading and writing JSON data that will be stored within the item along with other items on the page. Changes in configuration of the plugin are recorded in the journal but updates to the data itself are recorded elsewhere."
     },
-    "date": 1471735279000,
-    "certificate": "from mkplugin.sh"
-  }
-]
+    {
+      "type": "json",
+      "id": "35ece947aa90b581",
+      "text": "23 writes, 6 objects, 3 arrays."
+    },
+    {
+      "type": "paragraph",
+      "id": "92cbe6cac5108418",
+      "text": "Read data from the page with an http GET request."
+    },
+    {
+      "type": "code",
+      "id": "4a82a08a99a7dc43",
+      "text": "curl http://<site>/plugin/json/<slug>"
+    },
+    {
+      "type": "paragraph",
+      "id": "cb70f800b671844d",
+      "text": "Write data to the page with an http PUT request."
+    },
+    {
+      "type": "code",
+      "id": "6803b3063cc970e8",
+      "text": "echo '{\"foo\": \"bar\"}' |\\\n  curl -X PUT  -d @- \\\n    -H \"Content-Type: application/json\" \\\n    -H \"X-Api-Key:35ece947aa90b581\" \\\n    http://<site>/plugin/json/<slug>"
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About JSON Plugin",
+        "story": [
+          {
+            "type": "paragraph",
+            "id": "7fdbf43fc61e3058",
+            "text": "Here we describe the purpose of the plugin and include a sample."
+          },
+          {
+            "type": "json",
+            "id": "35ece947aa90b581",
+            "text": "This is text in the new plugin. You can *double-click* to edit it too."
+          }
+        ]
+      },
+      "date": 1471735279000,
+      "certificate": "from mkplugin.sh"
+    },
+    {
+      "type": "edit",
+      "id": "7fdbf43fc61e3058",
+      "item": {
+        "type": "paragraph",
+        "id": "7fdbf43fc61e3058",
+        "text": "The plugin exposes restful endpoints for reading and writing JSON data that will be stored within the item along with other items on the page. Changes in configuration of the plugin are recorded in the journal but updates to the data itself are recorded elsewhere."
+      },
+      "date": 1471839965449
+    },
+    {
+      "type": "edit",
+      "id": "35ece947aa90b581",
+      "item": {
+        "type": "json",
+        "id": "35ece947aa90b581",
+        "text": "23 writes, 6 objects, 3 arrays."
+      },
+      "date": 1471840007407
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "92cbe6cac5108418"
+      },
+      "id": "92cbe6cac5108418",
+      "type": "add",
+      "after": "35ece947aa90b581",
+      "date": 1471840211675
+    },
+    {
+      "type": "edit",
+      "id": "92cbe6cac5108418",
+      "item": {
+        "type": "paragraph",
+        "id": "92cbe6cac5108418",
+        "text": "Read data from the object with an http GET request."
+      },
+      "date": 1471840288670
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "4a82a08a99a7dc43"
+      },
+      "id": "4a82a08a99a7dc43",
+      "type": "add",
+      "after": "92cbe6cac5108418",
+      "date": 1471840291516
+    },
+    {
+      "type": "edit",
+      "id": "4a82a08a99a7dc43",
+      "item": {
+        "type": "code",
+        "id": "4a82a08a99a7dc43",
+        "text": "curl http://<site>/plugin/json/<slug>"
+      },
+      "date": 1471840371397
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "cb70f800b671844d"
+      },
+      "id": "cb70f800b671844d",
+      "type": "add",
+      "after": "4a82a08a99a7dc43",
+      "date": 1471840380078
+    },
+    {
+      "type": "edit",
+      "id": "cb70f800b671844d",
+      "item": {
+        "type": "paragraph",
+        "id": "cb70f800b671844d",
+        "text": "Write data to the page with an http PUT request."
+      },
+      "date": 1471840403073
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "6803b3063cc970e8"
+      },
+      "id": "6803b3063cc970e8",
+      "type": "add",
+      "after": "cb70f800b671844d",
+      "date": 1471840427768
+    },
+    {
+      "type": "edit",
+      "id": "6803b3063cc970e8",
+      "item": {
+        "type": "code",
+        "id": "6803b3063cc970e8",
+        "text": "echo '{\"foo\": \"bar\"}' |\\\n  curl -X PUT  -d @-\\\n    -H \"Content-Type: application/json\" \\\n    -H \"X-Api-Key:35ece947aa90b581\" \\\n    http://<site>/plugin/json/<slug>"
+      },
+      "date": 1471840593749
+    },
+    {
+      "type": "edit",
+      "id": "92cbe6cac5108418",
+      "item": {
+        "type": "paragraph",
+        "id": "92cbe6cac5108418",
+        "text": "Read data from the page with an http GET request."
+      },
+      "date": 1471840625111
+    },
+    {
+      "type": "edit",
+      "id": "6803b3063cc970e8",
+      "item": {
+        "type": "code",
+        "id": "6803b3063cc970e8",
+        "text": "echo '{\"foo\": \"bar\"}' |\\\n  curl -X PUT  -d @- \\\n    -H \"Content-Type: application/json\" \\\n    -H \"X-Api-Key:35ece947aa90b581\" \\\n    http://<site>/plugin/json/<slug>"
+      },
+      "date": 1471840821805
+    }
+  ]
 }
