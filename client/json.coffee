@@ -6,11 +6,21 @@ expand = (text)->
     .replace />/g, '&gt;'
     .replace /\*(.+?)\*/g, '<i>$1</i>'
 
+ago = (msec) ->
+  min = Math.round msec / 60000
+  "#{min} minutes"
+
+stats = (item) ->
+  "#{JSON.stringify(item.resource).length} bytes
+  written #{ago(Date.now() - item.written)} ago
+  after #{ago(item.interval)}."
+
 emit = ($item, item) ->
   $item.append """
-    <p style="background-color:#eee;padding:15px;">
-      #{expand item.text}
-    </p>
+    <div style="background-color:#eee;padding:16px;">
+      <p>#{expand(item.text)}</p>
+      <p class="caption">#{stats(item)}<p>
+    </div>
   """
 
 bind = ($item, item) ->

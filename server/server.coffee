@@ -25,8 +25,21 @@ startServer = (params) ->
       return res.status(401).json({status: 'error', error: "Invalid x-api-key in header"}) unless req.headers['x-api-key'] == key
       item = page.story[plugin]
       item.resource = req.body
+      if item.slug && item.slug == slug && item.writes
+        item.writes += 1
+        if item.written
+          item.interval = Date.now() - item.written
+      else
+        item.slug = slug
+        item.writes = 1
+        item.interval = undefined
+      item.written = Date.now()
       app.pagehandler.put slug, page, (err) ->
         return res.e err if err
-        res.json {status: 'ok', length: JSON.stringify(item.resource).length}
+        res.json
+          status: 'ok'
+          writes: item.writes
+          interval: item.interval
+          length: JSON.stringify(item.resource).length
 
 module.exports = {startServer}

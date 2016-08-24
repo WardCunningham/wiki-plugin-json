@@ -2,3 +2,4 @@ Gruntfile.js
 client/*.coffee
 server/*.coffee
 test
+status
