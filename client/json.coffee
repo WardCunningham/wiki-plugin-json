@@ -6,13 +6,19 @@ expand = (text)->
     .replace />/g, '&gt;'
     .replace /\*(.+?)\*/g, '<i>$1</i>'
 
-ago = (msec) ->
-  min = Math.round msec / 60000
-  "#{min} minutes"
+ago = (msecs) ->
+  return "#{Math.floor msecs} milliseconds" if (secs = msecs/1000) < 2
+  return "#{Math.floor secs} seconds" if (mins = secs/60) < 2
+  return "#{Math.floor mins} minutes" if (hrs = mins/60) < 2
+  return "#{Math.floor hrs} hours" if (days = hrs/24) < 2
+  return "#{Math.floor days} days" if (weeks = days/7) < 2
+  return "#{Math.floor weeks} weeks" if (months = days/31) < 2
+  return "#{Math.floor months} months" if (years = days/365) < 2
+  return "#{Math.floor years} years"
 
 stats = (item) ->
   "#{JSON.stringify(item.resource).length} bytes
-  written #{ago(Date.now() - item.written)} ago
+  updated #{ago(Date.now() - item.written)} ago
   after #{ago(item.interval)}."
 
 emit = ($item, item) ->
