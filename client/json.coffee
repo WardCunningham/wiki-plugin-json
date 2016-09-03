@@ -17,9 +17,12 @@ ago = (msecs) ->
   return "#{Math.floor years} years"
 
 stats = (item) ->
-  "#{JSON.stringify(item.resource).length} bytes
-  updated #{ago(Date.now() - item.written)} ago
-  after #{ago(item.interval)}."
+  result = []
+  result.push "#{JSON.stringify(item.resource).length} bytes" if item.resource
+  result.push "updated #{ago(Date.now() - item.written)} ago" if item.written
+  result.push "after #{ago(item.interval)}." if item.interval
+  result.push "empty" unless result.length
+  result.join ' '
 
 emit = ($item, item) ->
   $item.append """
