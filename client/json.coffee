@@ -7,14 +7,14 @@ expand = (text)->
     .replace /\*(.+?)\*/g, '<i>$1</i>'
 
 ago = (msecs) ->
-  return "#{Math.floor msecs} milliseconds" if (secs = msecs/1000) < 2
-  return "#{Math.floor secs} seconds" if (mins = secs/60) < 2
-  return "#{Math.floor mins} minutes" if (hrs = mins/60) < 2
-  return "#{Math.floor hrs} hours" if (days = hrs/24) < 2
-  return "#{Math.floor days} days" if (weeks = days/7) < 2
-  return "#{Math.floor weeks} weeks" if (months = days/31) < 2
-  return "#{Math.floor months} months" if (years = days/365) < 2
-  return "#{Math.floor years} years"
+  return "#{Math.round msecs} milliseconds" if (secs = msecs/1000) < 2
+  return "#{Math.round secs} seconds" if (mins = secs/60) < 2
+  return "#{Math.round mins} minutes" if (hrs = mins/60) < 2
+  return "#{Math.round hrs} hours" if (days = hrs/24) < 2
+  return "#{Math.round days} days" if (weeks = days/7) < 2
+  return "#{Math.round weeks} weeks" if (months = days/31) < 2
+  return "#{Math.round months} months" if (years = days/365) < 2
+  return "#{Math.round years} years"
 
 stats = (item) ->
   result = []
@@ -36,5 +36,5 @@ bind = ($item, item) ->
   $item.dblclick -> wiki.textEditor $item, item
 
 window.plugins.json = {emit, bind} if window?
-module.exports = {expand} if module?
+module.exports = {expand, ago} if module?
 
