@@ -8,13 +8,18 @@ tokens = null
 startServer = (params) ->
   app = params.app
 
+  cors = (req, res, next) ->
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+    next()
+
   tokenFile = "#{params.argv.data}/status/plugin/json/tokens.json"
   fs.readFile tokenFile, (err, data) ->
     if err then return console.log "caution: #{err.message}"
     try tokens = JSON.parse data
     catch err then console.log "caution: #{tokenFile}: #{err.message}"
 
-  app.get '/plugin/json/:slug', (req, res) ->
+  app.get '/plugin/json/:slug', cors, (req, res) ->
     slug = req.params.slug
     app.pagehandler.get slug, (e, page, status) ->
       return res.e e if e
