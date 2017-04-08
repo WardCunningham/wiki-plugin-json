@@ -1,0 +1,270 @@
+{
+  "title": "About JSON API Keys",
+  "story": [
+    {
+      "type": "paragraph",
+      "id": "998ea0b51887f781",
+      "text": "The JSON plugin allows writes from remote computers provided they include a header with a valid API key. Here we describe how a server administrator can manage keys."
+    },
+    {
+      "type": "paragraph",
+      "id": "b8635e45d70c28d6",
+      "text": "Valid keys are kept in a tokens.json file, one file for each site hosted by the server. If server data is kept in the customary ~/.wiki directory, look to these locations."
+    },
+    {
+      "type": "code",
+      "id": "11aea7dbab120e92",
+      "text": "~/.wiki/status/plugin/json/tokens.json\n~/.wiki/<site>/status/plugin/json/tokens.json"
+    },
+    {
+      "type": "paragraph",
+      "id": "4a374bf15108d3c2",
+      "text": "The tokens are listed by slug, where * means all slugs."
+    },
+    {
+      "type": "code",
+      "id": "aeb816b6de964ea8",
+      "text": "tokens = {slug: keys}\nkeys = {key: info}\ninfo = {id: string, nb: string}"
+    },
+    {
+      "type": "paragraph",
+      "id": "22e9af9e2df96cf6",
+      "text": "A complete tokens.json file might look like this."
+    },
+    {
+      "type": "code",
+      "id": "cbdf5ae6ab6b54af",
+      "text": "{\n  \"json-plugin\": {\n    \"429c7b\": {\n      \"id\": \"demo\",\n      \"nb\": \"widely known, discard if abused\"\n    }\n  },\n  \"*\": {\n    \"79ce4a\": {\n      \"id\": \"wildcard\",\n      \"nb\": \"ward, experimental use only\"\n    }\n  }\n}\n"
+    },
+    {
+      "type": "paragraph",
+      "id": "d229473026028494",
+      "text": "The info fields are for the convenience of administrators. The id might be returned to requesters in some situations while the nb field will remain private."
+    },
+    {
+      "type": "paragraph",
+      "id": "112f469fddac28cf",
+      "text": "Longer keys are encouraged."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About JSON API Keys",
+        "story": []
+      },
+      "date": 1491669642529
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "998ea0b51887f781"
+      },
+      "id": "998ea0b51887f781",
+      "type": "add",
+      "date": 1491669652514
+    },
+    {
+      "type": "edit",
+      "id": "998ea0b51887f781",
+      "item": {
+        "type": "paragraph",
+        "id": "998ea0b51887f781",
+        "text": "The JSON plugin allows writes from remote computers provided they include a header with a valid API key. Here we describe how a server administrator can manage these keys."
+      },
+      "date": 1491669831793
+    },
+    {
+      "type": "edit",
+      "id": "998ea0b51887f781",
+      "item": {
+        "type": "paragraph",
+        "id": "998ea0b51887f781",
+        "text": "The JSON plugin allows writes from remote computers provided they include a header with a valid API key. Here we describe how a server administrator can manage keys."
+      },
+      "date": 1491669837441
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "b8635e45d70c28d6"
+      },
+      "id": "b8635e45d70c28d6",
+      "type": "add",
+      "after": "998ea0b51887f781",
+      "date": 1491670110118
+    },
+    {
+      "type": "edit",
+      "id": "b8635e45d70c28d6",
+      "item": {
+        "type": "paragraph",
+        "id": "b8635e45d70c28d6",
+        "text": "Valid keys are kept in a tokens.json file, one file for each site hosted by the server. If server data is kept in the customary ~/.wiki directory, these files would be as follows."
+      },
+      "date": 1491670341968
+    },
+    {
+      "type": "edit",
+      "id": "b8635e45d70c28d6",
+      "item": {
+        "type": "paragraph",
+        "id": "b8635e45d70c28d6",
+        "text": "Valid keys are kept in a tokens.json file, one file for each site hosted by the server. If server data is kept in the customary ~/.wiki directory, look to these locations."
+      },
+      "date": 1491670360611
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "11aea7dbab120e92"
+      },
+      "id": "11aea7dbab120e92",
+      "type": "add",
+      "after": "b8635e45d70c28d6",
+      "date": 1491670365620
+    },
+    {
+      "type": "edit",
+      "id": "11aea7dbab120e92",
+      "item": {
+        "type": "code",
+        "id": "11aea7dbab120e92",
+        "text": "~/.wiki/status/plugins/"
+      },
+      "date": 1491670400790
+    },
+    {
+      "type": "edit",
+      "id": "11aea7dbab120e92",
+      "item": {
+        "type": "code",
+        "id": "11aea7dbab120e92",
+        "text": "~/.wiki/status/plugin/json/tokens.json\n~/.wiki/<site>/status/plugin/json/tokens.json"
+      },
+      "date": 1491670446353
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "4a374bf15108d3c2"
+      },
+      "id": "4a374bf15108d3c2",
+      "type": "add",
+      "after": "11aea7dbab120e92",
+      "date": 1491670800810
+    },
+    {
+      "type": "edit",
+      "id": "4a374bf15108d3c2",
+      "item": {
+        "type": "paragraph",
+        "id": "4a374bf15108d3c2",
+        "text": "The tokens are listed by sl"
+      },
+      "date": 1491670831055
+    },
+    {
+      "type": "edit",
+      "id": "4a374bf15108d3c2",
+      "item": {
+        "type": "paragraph",
+        "id": "4a374bf15108d3c2",
+        "text": "The tokens are listed by slug, where * means all slugs."
+      },
+      "date": 1491670920181
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "aeb816b6de964ea8"
+      },
+      "id": "aeb816b6de964ea8",
+      "type": "add",
+      "after": "4a374bf15108d3c2",
+      "date": 1491670938389
+    },
+    {
+      "type": "edit",
+      "id": "aeb816b6de964ea8",
+      "item": {
+        "type": "code",
+        "id": "aeb816b6de964ea8",
+        "text": "tokens = {slug: keys}\nkeys = {key: info}\ninfo = {id: string, nb: string}"
+      },
+      "date": 1491671096781
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "22e9af9e2df96cf6"
+      },
+      "id": "22e9af9e2df96cf6",
+      "type": "add",
+      "after": "aeb816b6de964ea8",
+      "date": 1491671130348
+    },
+    {
+      "type": "edit",
+      "id": "22e9af9e2df96cf6",
+      "item": {
+        "type": "paragraph",
+        "id": "22e9af9e2df96cf6",
+        "text": "A complete tokens.json file might look like this."
+      },
+      "date": 1491671163947
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "cbdf5ae6ab6b54af"
+      },
+      "id": "cbdf5ae6ab6b54af",
+      "type": "add",
+      "after": "22e9af9e2df96cf6",
+      "date": 1491671166343
+    },
+    {
+      "type": "edit",
+      "id": "cbdf5ae6ab6b54af",
+      "item": {
+        "type": "code",
+        "id": "cbdf5ae6ab6b54af",
+        "text": "{\n  \"json-plugin\": {\n    \"429c7b\": {\n      \"id\": \"demo\",\n      \"nb\": \"widely known, discard if abused\"\n    }\n  },\n  \"*\": {\n    \"79ce4a\": {\n      \"id\": \"wildcard\",\n      \"nb\": \"ward, experimental use only\"\n    }\n  }\n}\n"
+      },
+      "date": 1491671218526
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "d229473026028494"
+      },
+      "id": "d229473026028494",
+      "type": "add",
+      "after": "cbdf5ae6ab6b54af",
+      "date": 1491671285842
+    },
+    {
+      "type": "edit",
+      "id": "d229473026028494",
+      "item": {
+        "type": "paragraph",
+        "id": "d229473026028494",
+        "text": "The info fields are for the convenience of administrators. The id might be returned to requesters in some situations while the nb field will remain private."
+      },
+      "date": 1491671366348
+    },
+    {
+      "type": "add",
+      "id": "112f469fddac28cf",
+      "item": {
+        "type": "paragraph",
+        "id": "112f469fddac28cf",
+        "text": "Longer keys are encouraged."
+      },
+      "after": "d229473026028494",
+      "date": 1491671399590
+    }
+  ]
+}

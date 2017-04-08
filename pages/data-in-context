@@ -1,0 +1,158 @@
+{
+  "title": "Data in Context",
+  "story": [
+    {
+      "type": "paragraph",
+      "id": "ddac79cae710d49a",
+      "text": "We collect structural data within these pages where it can be interactively transformed and assembled into a whole destine for downstream inquiry and analysis."
+    },
+    {
+      "type": "paragraph",
+      "id": "eb7d08889b316624",
+      "text": "Structural data describes how things fit together. For example an organization chart and a dataflow diagram both represent things, people and programs, connected by relations, reporting hierarchy and data transfers. When we combine these we can ask questions like who will care if we change any given program?"
+    },
+    {
+      "type": "paragraph",
+      "id": "b66e21858b80957e",
+      "text": "[[Organization Chart]]"
+    },
+    {
+      "type": "paragraph",
+      "id": "b3ccd86030254cdf",
+      "text": "We imagine data from a variety of sources similar to those we've used in practice. Start with the organization chart. It will show you where this data might come from and how it is bound into graph nodes and relations."
+    },
+    {
+      "type": "paragraph",
+      "id": "a1473c19684e90b4",
+      "text": "[[About This Data]]"
+    },
+    {
+      "type": "paragraph",
+      "id": "5ee48627d35abeb7",
+      "text": "Each source suggests subsequent data that could reasonably merged into the graph next. Partial assembly makes verification easier while alternate paths and destinations make different wholes."
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "Data in Context",
+        "story": []
+      },
+      "date": 1489928039684
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "ddac79cae710d49a"
+      },
+      "id": "ddac79cae710d49a",
+      "type": "add",
+      "date": 1489928064944
+    },
+    {
+      "type": "edit",
+      "id": "ddac79cae710d49a",
+      "item": {
+        "type": "paragraph",
+        "id": "ddac79cae710d49a",
+        "text": "We collect structural data within these pages where it can be interactively transformed and assembled into a whole destine for downstream inquiry and analysis."
+      },
+      "date": 1489928347040
+    },
+    {
+      "type": "add",
+      "id": "eb7d08889b316624",
+      "item": {
+        "type": "paragraph",
+        "id": "eb7d08889b316624",
+        "text": "Structural data describes how things fit together. An organization chart and a dataflow diagram represent both represent things, people and programs, connected by reporting hierarchy and data transfers. When we combine these we can ask questions like who will care if we change any given program?"
+      },
+      "after": "ddac79cae710d49a",
+      "date": 1489928673030
+    },
+    {
+      "type": "edit",
+      "id": "eb7d08889b316624",
+      "item": {
+        "type": "paragraph",
+        "id": "eb7d08889b316624",
+        "text": "Structural data describes how things fit together. An organization chart and a dataflow diagram both represent things, people and programs, connected by relations, reporting hierarchy and data transfers. When we combine these we can ask questions like who will care if we change any given program?"
+      },
+      "date": 1489928839930
+    },
+    {
+      "type": "add",
+      "id": "b66e21858b80957e",
+      "item": {
+        "type": "paragraph",
+        "id": "b66e21858b80957e",
+        "text": "[[Organization Chart]]"
+      },
+      "after": "eb7d08889b316624",
+      "date": 1489929055909
+    },
+    {
+      "type": "add",
+      "id": "b3ccd86030254cdf",
+      "item": {
+        "type": "paragraph",
+        "id": "b3ccd86030254cdf",
+        "text": "We imagine data from a variety of sources similar to those we've used in practice. Start with the organization chart. It will show you were this data comes from and how it is bound into graph nodes and relations."
+      },
+      "after": "b66e21858b80957e",
+      "date": 1489937637151
+    },
+    {
+      "type": "edit",
+      "id": "b3ccd86030254cdf",
+      "item": {
+        "type": "paragraph",
+        "id": "b3ccd86030254cdf",
+        "text": "We imagine data from a variety of sources similar to those we've used in practice. Start with the organization chart. It will show you where this data might come from and how it is bound into graph nodes and relations."
+      },
+      "date": 1489937699680
+    },
+    {
+      "type": "add",
+      "id": "5ee48627d35abeb7",
+      "item": {
+        "type": "paragraph",
+        "id": "5ee48627d35abeb7",
+        "text": "Each source suggests subsequent data that could reasonably merged into the graph next. Partial assembly makes verification easier while alternate paths and destinations make different wholes."
+      },
+      "after": "b3ccd86030254cdf",
+      "date": 1489937995446
+    },
+    {
+      "type": "fork",
+      "date": 1489966623154
+    },
+    {
+      "type": "add",
+      "id": "a1473c19684e90b4",
+      "item": {
+        "type": "paragraph",
+        "id": "a1473c19684e90b4",
+        "text": "[[About This Data]]"
+      },
+      "after": "b3ccd86030254cdf",
+      "date": 1489984813573
+    },
+    {
+      "type": "edit",
+      "id": "eb7d08889b316624",
+      "item": {
+        "type": "paragraph",
+        "id": "eb7d08889b316624",
+        "text": "Structural data describes how things fit together. For example an organization chart and a dataflow diagram both represent things, people and programs, connected by relations, reporting hierarchy and data transfers. When we combine these we can ask questions like who will care if we change any given program?"
+      },
+      "date": 1490016174926
+    },
+    {
+      "type": "fork",
+      "site": "context.asia.wiki.org",
+      "date": 1491667526247
+    }
+  ]
+}
