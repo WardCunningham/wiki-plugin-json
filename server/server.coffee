@@ -16,7 +16,7 @@ startServer = (params) ->
   tokenFile = "#{params.argv.data}/status/plugin/json/tokens.json"
   fs.readFile tokenFile, (err, data) ->
     if err then return console.log "caution: #{err.message}"
-    try tokens = JSON.parse data
+    try params.plugin_json_tokens = JSON.parse data
     catch err then console.log "caution: #{tokenFile}: #{err.message}"
 
   app.get '/plugin/json/:slug', cors, (req, res) ->
@@ -36,6 +36,7 @@ startServer = (params) ->
          item.type == 'json'
       return res.status(404).json({status: 'error', error: "No wiki-plugin-json on this page.", slug}) unless plugin >= 0
       key = req.headers['x-api-key']
+      tokens = params.plugin_json_tokens
       auth = tokens?[slug]?[key] or tokens?['*']?[key]
       unless auth
         return res.status(401).json({status: 'error', error: "Missing or invalid x-api-key in header"})
